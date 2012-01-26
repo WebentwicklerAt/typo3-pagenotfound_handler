@@ -1,0 +1,37 @@
+plugin.tx_pagenotfoundhandler {
+	# redirect to best matching result (0=off/1=on)
+	redirect = 0
+	
+	# this header is set if user is redirected to a page
+	redirectHeader = 301 Moved Permanently
+	
+	# tries to use the referer to get the keywords (0=off/1=on)
+	referer = 0
+	
+	# tries to use the query string to get the keywords (0=off/1=on)
+	query = 0
+	
+	# this regular expression pattern is used to split path segment into search words
+	pathSplitPattern = [\s/\-_\+]+
+	
+	# this regular expression pattern is used to split query segment into search words
+	querySplitPattern = [\s/\-_\+\[\]=&]+
+	
+	# search operator (en: AND/OR; de: UND/ODER)
+	operator = OR
+	
+	# comma separated list of values to exclude from search
+	ignore = and, or, to, a, the
+	
+	# redirect if this minimal rating for best matching result is achived
+	minRating = 100
+	
+	# redirect if this maximum number of results with same highest rating is not exceeded (-1=off)
+	maxHighestRatingResults = 1
+	
+	# page id where indexed_search-plugin is installed on
+	searchPid = 1
+	
+	# this header is set if user is redirected to indexed_search-page
+	searchHeader = 404 Not Found
+}
